@@ -14,11 +14,11 @@
     </head>
     <body>
         <header id="head">
-            <img id="back" src="images/back.png" width="70px">
+            <a href="/salesBook/home.jsp"> <img id="back" src="images/back.png" width="70px">
         </header>
         <div>
-            <button> Compradores</button><br><br>
-            <button> Tipo de Documento</button>
+            <a href="#"><button> Compradores</button></a><br><br>
+            <a href="/salesBook/docType.jsp"><button> Tipo de Documento</button></a>
         </div>
         <br>
         <div id="container_form">

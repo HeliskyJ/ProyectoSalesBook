@@ -15,7 +15,7 @@
     <body>
         <header id="head"> </header>
         <div id="contenedor">
-            <img src="images/back.png" alt="Regresar" width="60px">
+            <a href="/salesBook/records.jsp"> <img src="images/back.png" alt="Regresar" width="60px"></a>
             <form>
                 <img id="doc" src="images/doc.png" alt="documento">
                 <input type="text" placeholder="Nombre del documento">
