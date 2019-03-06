@@ -1,0 +1,107 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 05-mar-2019, 9:37:12
+    Author     : Hely Mendez]
+*/
+body{
+    
+}
+#formul{
+position: absolute;
+width: 400px;
+height: 640px;
+left: 548px;
+top: 198px;
+
+background: #FBFAFA;
+border-bottom: 3px solid #C2B9B9;
+border-left: 3px solid #C2B9B9;
+border-top: 3px solid #C2B9B9;
+box-sizing: border-box;
+}
+
+#user{
+position: absolute;
+width: 152px;
+left: 120px;
+top: 42px;
+}
+
+#inputOne{
+
+background: #C4C4C4;
+position: absolute;
+width: 220px;
+height: 29px;
+left:0px;
+top: 230px;
+border: 0px;
+
+mix-blend-mode:nomal;
+box-shadow: 0px 8px 5px #4A67FF;
+}
+
+#inputTwo{
+
+background: #C4C4C4;
+
+
+position: absolute;
+width: 220px;
+height: 29px;
+left:0px;
+top: 298px;
+border: 0px;
+mix-blend-mode: normal;
+box-shadow: 0px 8px 8px #4A67FF;
+}
+
+#logo{
+position: absolute;
+width: 518px;
+left: 851px;
+top: 500px;
+}
+
+#foot{
+    position: absolute;
+width: 1080.03px;
+height: 0px;
+left: 350px;
+top: 837px;
+
+border: 5px solid #A09898;
+box-sizing: border-box;
+transform: rotate(-179.90deg);
+}
+
+button{
+    position: absolute;
+width: 91px;
+height: 38px;
+left: 18px;
+top: 415px;
+border: 0px;
+background: #478A8F;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+line-height: normal;
+font-size: 14px;
+
+color: #FFFFFF;
+}
+
+#plus{
+    
+position: absolute;
+width: 47px;
+
+left: 360px;
+top: -15px;
+}
