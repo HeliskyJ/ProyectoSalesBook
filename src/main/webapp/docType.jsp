@@ -16,9 +16,11 @@
         <header id="head"> </header>
         <div id="contenedor">
             <a href="/salesBook/records.jsp"> <img src="images/back.png" alt="Regresar" width="60px"></a>
-            <form>
+            <form method="post" action="/salesBook/InDocType">
                 <img id="doc" src="images/doc.png" alt="documento">
-                <input type="text" placeholder="Nombre del documento">
+                <input name="type" type="text" placeholder="Nombre del documento"
+                       required="true" minlength="5" maxlength="35" 
+                       autofocus="true">
                 <button>Guardar</button>
             </form>
         </div>
