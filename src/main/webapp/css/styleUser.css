@@ -105,3 +105,12 @@ width: 47px;
 left: 360px;
 top: -15px;
 }
+#p{
+    margin-top:180px;
+ font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+line-height: normal;
+font-size: 24px; 
+color: #F00;
+}
