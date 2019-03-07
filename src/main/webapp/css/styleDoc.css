@@ -3,6 +3,10 @@
     Created on : 06-mar-2019, 12:37:39
     Author     : Hely Mendez
 */
+
+body{
+    background: #EAE3E3;
+}
 #head{
     position: relative;
 width: 100%;

@@ -17,7 +17,7 @@
             <a href="/salesBook/home.jsp"> <img id="back" src="images/back.png" width="70px">
         </header>
         <div>
-            <a href="#"><button> Compradores</button></a><br><br>
+            <a href="/salesBook/buyer.jsp"><button> Compradores</button></a><br><br>
             <a href="/salesBook/docType.jsp"><button> Tipo de Documento</button></a>
         </div>
         <br>
