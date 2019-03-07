@@ -16,10 +16,13 @@
         <header id="head"></header>
         <div id="container_form">
             <a href="/salesBook/records.jsp"><img src="images/back.png" alt="REGRESAR" width="60px"> </a>
-            <form>
+            <form method="post" action="/salesBook/InBuy" autocomplete="false">
                 <img id="comp" src="images/buy.png" alt="Comprador">
-                <input type="text" placeholder="Nombre completo" autofocus="true" requerid="true"> <br><br>
-                <input type="text" placeholder="NIT" required="true"> 
+                <input type="text" name="name" placeholder="Nombre completo" 
+                       autofocus="true" requerid="true" autocomplete="false">
+                <br>
+                <br>
+                <input type="text" name="nit" placeholder="NIT" required="true"> 
                 <button>Guardar</button>
             </form>
         </div>
