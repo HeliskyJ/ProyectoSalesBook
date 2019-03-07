@@ -41,6 +41,7 @@ public class LogIn extends HttpServlet {
         
         if(user == null){
             sesion.setAttribute("isReal", false);
+            request.getRequestDispatcher("invalid.jsp").forward(request, response);
         }
         else if(password.equals(user.getPassword())){
             sesion.setAttribute("Nombrecompleto", user.getFirstName());
@@ -49,6 +50,7 @@ public class LogIn extends HttpServlet {
             request.getRequestDispatcher("home.jsp").forward(request, response);
         }else{
             sesion.setAttribute("isReal", false);
+            request.getRequestDispatcher("invalid.jsp").forward(request, response);
         }
     }
 
