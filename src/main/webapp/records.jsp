@@ -28,8 +28,8 @@
                 <br><br><br><br><br>
                 <div id="bol">
                     <label>Es exenta</label>
-                    <input id="ex" name="exem" type="checkbox" value="0"/>si<br>
-                    <input id="ex" name="exem" type="checkbox" value="1"/>No<br>
+                    <input class="exOne" id="ex" name="exem" type="checkbox" value="0"/>si<input class="exTwo" id="ex" name="exem" type="checkbox" value="1"/>No
+                    
                 </div>
                 <input id="tot" name="total" type="number" 
                        required="true" value="" placeholder="Total"
