@@ -22,16 +22,23 @@
         </div>
         <br>
         <div id="container_form">
-            <form>
+            <form method="post" action="/salesBook/InDoc">
                 <input id="dat" name="date" type="date" required="true" autofocus="true"/><br>
                 <input id="number" name="serial" type="text" required="true" placeholder="No.serie"/>
                 <br><br><br><br><br>
                 <div id="bol">
                     <label>Es exenta</label>
-                    <input id="ex" name="buyer" type="checkbox" value="true"/>
+                    <input id="ex" name="exem" type="checkbox" value="0"/>si<br>
+                    <input id="ex" name="exem" type="checkbox" value="1"/>No<br>
                 </div>
-                <input id="tot" name="total" type="number" required="true" placeholder="Total"><br>
-                <input id="iv" name="iva" type="number" placeholder="IVA"  disabled="true"> <br>
+                <input id="tot" name="total" type="number" 
+                       required="true" value="" placeholder="Total"
+                       onChange="calculo(this.value,tot.value, iv)"><br>
+                
+                <input id="iv" name="iva" type="number" placeholder="IVA" 
+                       disabled="true" value="0"
+                       onChange="calculo(this.value,tot.value,iv)"> <br>
+                
                 <input name="buyer" type="text" required="true" placeholder="Comprador"/><br>
                 <input name="docType" type="text" required="true" placeholder="Tipo de Documento"/>
                 <br>
@@ -40,5 +47,17 @@
             </form>
         </div>
         <img id="log" src="images/logo.png" width="350px">
+        <script>
+            function calculo(valor,total,inputImpuesto){
+              var iva = 0.12;
+              var totl = total * iva;
+               
+                var impuesto = eval(inputImpuesto);
+                inputImpuesto.value = totl;
+                
+            }
+
+            
+            </script>
     </body>
 </html>
