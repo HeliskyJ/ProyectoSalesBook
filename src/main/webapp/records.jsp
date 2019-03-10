@@ -28,27 +28,58 @@
                 <br><br><br><br><br>
                 <div id="bol">
                     <label>Es exenta</label>
-                    <input class="exOne" id="ex" name="exem" type="checkbox" value="0"/>si<input class="exTwo" id="ex" name="exem" type="checkbox" value="1"/>No
-                    
+                    <input class="exOne" id="ex" name="exem" type="checkbox"
+                           checked="false"
+                           value="0" onChange="calculo(this.val,ex.value, ex.checked, ex)"/>Si
                 </div>
                 <input id="tot" name="total" type="number" 
-                       required="true" value="" placeholder="Total"
-                       onChange="calculo(this.value,tot.value, iv)"><br>
+                       required="true" value="" placeholder="Total" step="any"
+                       onChange="calculo(this.value,tot.value, iv, ex.checked)"><br>
                 
-                <input id="iv" name="iva" type="number" placeholder="IVA" 
-                       disabled="true" value="0"
-                       onChange="calculo(this.value,tot.value,iv)"> <br>
+                <input id="iv" name="iva" type="text" value="0"> <br>
                 
                 <input name="buyer" type="text" required="true" placeholder="Comprador"/><br>
                 <input name="docType" type="text" required="true" placeholder="Tipo de Documento"/>
                 <br>
-                <button id="buttonOne">Cancelar</button>
+                <button id="buttonOne" type="reset">Cancelar</button>
                 <button id="buttonTwo">Guardar</button>
             </form>
         </div>
         <img id="log" src="images/logo.png" width="350px">
         <script>
-            function calculo(valor,total,inputImpuesto){
+            //var is_exempt[] = 
+           // var is_exempt = document.getElementById("ex").value;
+            //var x=$("#checkbox").is(":checked");
+            // var checkedValue = document.querySelector('.messageCheckbox:checked').value;
+  
+            
+          /*  function funcBool(valor,bool,check){
+                var is_exempt = true;
+                console.log(valor,bool,check);
+                
+                if(check===true){
+                    function calculo(){
+                        console.log("ya va queriendo");
+                }
+            }
+            }*/
+    function display(field)
+{
+   for (var i=0; i < field.length; i++)
+   if (field[i].checked)
+   alert('Check '+i+' with value of '+field[i].value);
+      
+}
+            
+            function calculo(valor,total,inputImpuesto,check, inputExempt){
+                
+                if(check==true){
+            
+                    console.log(check);
+      console.log("NADA");
+                
+            }else{
+          
               var iva = 0.12;
               var totl = total * iva;
                
@@ -56,6 +87,18 @@
                 inputImpuesto.value = totl;
                 
             }
+            }
+                
+           /* } else{
+              function calculo(valor,total,inputImpuesto){
+              var iva = 0;
+            
+               console.log(valor, total, inputImpuesto);
+                var impuesto = eval(inputImpuesto);
+                inputImpuesto.value = iva;
+            }
+                    
+            }*/
 
             
             </script>

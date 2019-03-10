@@ -16,7 +16,7 @@ public class DocumentDao {
     public static boolean add(Documents document){
         Connection con;
         PreparedStatement ps;
-        String sql = "insert into documents values(null,?,?,?,?,?,?,?)";
+        String sql = "insert into documents values(null,?,?,?,?,?,?,?,?)";
         
         try{
             con = Conexion.getConexion();
@@ -24,12 +24,16 @@ public class DocumentDao {
             ps.setDate(1, java.sql.Date.valueOf(document.getDocumentDate()));
             System.out.println(document.getDocumentDate());
             ps.setString(2, document.getSerialNumber());
-            ps.setDouble(3, document.getTotal());
-            ps.setDouble(4, document.getIva());
+            ps.setBoolean(3, document.isIsExempt());
+            System.out.println("bool "+document.isIsExempt());
+            ps.setDouble(4, document.getTotal());
+            ps.setDouble(5, document.getIva());
             System.out.println(document.getIva());
-            ps.setInt(5, document.getUserId());
-            ps.setInt(6, document.getBuyerId());
-            ps.setInt(7, document.getDocTypeId());
+            ps.setInt(6, document.getUserId());
+            ps.setInt(7, document.getBuyerId());
+            ps.setInt(8, document.getDocTypeId());
+            ps.executeUpdate();
+            System.out.println("Query ok");
             con.close();
             ps.close();
             return true;

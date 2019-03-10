@@ -87,7 +87,8 @@ width: 150px;
 height: 58px;
 left: 550px;
 top: 527px;
-
+}
+buttonTwo.value{
 background: #4D8A92;
 border: 0.5px solid #968888;
 box-sizing: border-box;
