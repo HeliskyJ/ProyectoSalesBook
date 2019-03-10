@@ -39,12 +39,12 @@ public class DocumentTypeDao {
            return false;
        }
     }
-    public static List<DocumentType> tipoDoc(){
+    public static List<DocumentType> getTipoDoc(){
         List<DocumentType> list = new ArrayList<>();
         Connection con;
         PreparedStatement ps;
         ResultSet rs;
-        String sql = "Select *from tipo_telefono";
+        String sql = "Select *from document_type";
         
         try{
             con=Conexion.getConexion();

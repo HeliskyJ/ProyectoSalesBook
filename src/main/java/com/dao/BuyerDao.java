@@ -9,7 +9,10 @@ import com.conexion.Conexion;
 import com.models.Buyer;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *Clase
@@ -38,5 +41,31 @@ public class BuyerDao {
             System.out.println("Error de insert "+e);
             return false;
         }
+    }
+    
+    public static List<Buyer> getBuyers(){
+        List<Buyer> listB = new ArrayList<>();
+        Connection con;
+        PreparedStatement ps;
+        ResultSet rs;
+        String sql = "Select id, full_name from buyer";
+        
+        try{
+            con=Conexion.getConexion();
+            ps=con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            
+            while(rs.next()){
+                listB.add(new Buyer(
+                        rs.getInt("id"),
+                        rs.getString("full_name")
+                ));
+            }
+            ps.close();
+            con.close();
+        }catch(SQLException e){
+            System.out.println("Error select Buyer "+ e.getMessage());
+            listB.clear();
+        }return listB;
     }
 }

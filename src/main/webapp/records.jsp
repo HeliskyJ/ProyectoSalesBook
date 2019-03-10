@@ -4,6 +4,14 @@
     Author     : hely
 --%>
 
+
+<%@page import="com.models.Buyer"%>
+<%@page import="com.dao.BuyerDao"%>
+<%@page import="java.util.List"%>
+<%@page import="com.dao.DocumentTypeDao"%>
+<%@page import="com.conexion.Conexion"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="com.models.DocumentType"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -37,14 +45,33 @@
                        onChange="calculo(this.value,tot.value, iv, ex.checked)"><br>
                 
                 <input id="iv" name="iva" type="text" value="0"> <br>
+                <%
+                    BuyerDao buy = new BuyerDao();
+                    %> 
+                    <select name="buy">
+                        <% for(Buyer compr: buy.getBuyers()) {%>
+                        
+                        <option value="<%= compr.getId()  %>"><%= compr.getFullName() %></option>
+
+                <% }%></select>
+               
+                <hr>
                 
-                <input name="buyer" type="text" required="true" placeholder="Comprador"/><br>
-                <input name="docType" type="text" required="true" placeholder="Tipo de Documento"/>
+                <%
+                    DocumentTypeDao doc = new DocumentTypeDao();
+                    %>
+                    <select name="item">
+                    <%for(DocumentType fo: doc.getTipoDoc()) {%>
+                       
+                    <option value="<%= fo.getId()  %>"><%= fo.getDocumentName() %></option>
+                <%}%></select>
                 <br>
                 <button id="buttonOne" type="reset">Cancelar</button>
                 <button id="buttonTwo">Guardar</button>
             </form>
         </div>
+                
+
         <img id="log" src="images/logo.png" width="350px">
         <script>
             //var is_exempt[] = 

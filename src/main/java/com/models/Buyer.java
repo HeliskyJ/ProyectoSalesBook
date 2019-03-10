@@ -26,6 +26,11 @@ public class Buyer {
         this.fullName = fullName;
         this.nit = nit;
     }
+        public Buyer(int id, String fullName) {
+        this.id = id;
+        this.fullName = fullName;
+    }
+   
 /**
  * Metodo constructor de buyer
  * @param fullName contiene el nombre completo del comprador.
@@ -62,6 +67,14 @@ public class Buyer {
  */
     public void setNit(String nit) {
         this.nit = nit;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
 }
