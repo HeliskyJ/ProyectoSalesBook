@@ -19,13 +19,12 @@ public class UserDao {
     public static boolean add(User user){
         Connection con;
         PreparedStatement ps;
-        String sql = "insert into user values(null,?,?,?,?,?,?)";
+        String sql = "insert into user values(null,?,?,?,?,?)";
         
         try{
             con = Conexion.getConexion();
             ps = con.prepareStatement(sql);
-            ps.setString(1, user.getFirstName());
-            ps.setString(2, user.getLastName());
+            ps.setString(1, user.getFullName());
             ps.setString(3, user.getUserName());
             ps.setString(4, user.getPassword());
             ps.setString(5, user.getBusinessName());
@@ -55,10 +54,9 @@ public class UserDao {
             rs.first();
                 User usuario;
                 usuario = new User(
-                rs.getInt("id"),
-                rs.getString("first_name"),
-                rs.getString("last_name"),
-                rs.getString("username"),
+                        rs.getInt("id"),
+                        rs.getString("full_name"),
+                        rs.getString("username"),
                         rs.getString("password"),
                         rs.getString("business_name"),
                         rs.getString("nit")      

@@ -37,8 +37,7 @@ public class LogUp extends HttpServlet {
             throws ServletException, IOException {
        User user;
        user = new User(
-            request.getParameter("firstName"),
-            request.getParameter("lastName"),
+            request.getParameter("fullName"),
             request.getParameter("username"),
             request.getParameter("password"),
             request.getParameter("businessName"),

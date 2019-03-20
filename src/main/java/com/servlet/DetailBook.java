@@ -5,9 +5,7 @@
  */
 package com.servlet;
 
-import com.models.Buyer;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,10 +16,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author hely
  */
-@WebServlet(name = "NewBuyer", urlPatterns = {"/InBuy"})
-public class BuyerIn extends HttpServlet {
-
-
+@WebServlet(name = "detalleLibro", urlPatterns = {"/dtlbk"})
+public class DetailBook extends HttpServlet {
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -33,11 +29,7 @@ public class BuyerIn extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String fullName = request.getParameter("name");
-        String nit = request.getParameter("nit");
         
-        com.dao.BuyerDao.add(new Buyer (fullName, nit));
-        request.getRequestDispatcher("/records.jsp").forward(request, response);
     }
 
     /**

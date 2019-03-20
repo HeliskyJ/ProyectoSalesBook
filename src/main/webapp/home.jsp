@@ -16,9 +16,9 @@
         <header id="head"> 
             <a href="#" id="logout"><img src="images/logOut.png" width="60px"></a></header>
         <div>
-            <a href="records.jsp"><input type="submit" value="Ingresar Datos"/> </a><br>
-            <input type="submit" value="Libros"/> <br>
-            <input type="submit" value="Consolidado"/> <br> 
+            <button onClick="location.href='records.jsp'">Ingresar Datos</button><br>
+            <button onclick="location.href='bookList.jsp'"> Libros</button><br>
+            <button onclick="location.href='consDate.jsp'"> Consolidado </button>
             </div>
             <img id="logo" src="images/logo.png" alt="logo empresarial">
         

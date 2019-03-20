@@ -32,6 +32,7 @@ public class LogIn extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+       
         HttpSession sesion = request.getSession();
             
         String usuario = request.getParameter("user");
@@ -44,8 +45,10 @@ public class LogIn extends HttpServlet {
             request.getRequestDispatcher("invalid.jsp").forward(request, response);
         }
         else if(password.equals(user.getPassword())){
-            sesion.setAttribute("Nombrecompleto", user.getFirstName());
-            sesion.setAttribute("Apellidoscompleto", user.getLastName());
+            sesion.setAttribute("id", user.getId());
+            sesion.setAttribute("Nto", user.getFullName());
+            sesion.setAttribute("Ngo", user.getBusinessName());
+            sesion.setAttribute("nt", user.getNit());
             sesion.setAttribute("isReal", true);
             request.getRequestDispatcher("home.jsp").forward(request, response);
         }else{

@@ -12,7 +12,7 @@ import com.models.Documents;
  * @author hely
  */
 public class TestDocument {
-    public static void main(String []args){
+   /* public static void main(String []args){
         long millis=System.currentTimeMillis();  
         java.sql.Date date=new java.sql.Date(millis);  
         System.out.println(date);
@@ -20,5 +20,5 @@ public class TestDocument {
                 "T000",32.5,2.3,1,1,1
         ));
         System.out.println(inserted);
-    }
+    }*/
 }

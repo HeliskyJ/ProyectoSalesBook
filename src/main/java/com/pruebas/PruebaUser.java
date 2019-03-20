@@ -14,9 +14,10 @@ import com.models.User;
  */
 public class PruebaUser {
     public static void main(String []args){
-        
+        /*
         boolean inserted =  UserDao.add(new User("Pablo Jose", 
                 "Robles Hernandez", "Loli", "123", "Los Laureles", "7558674k"));
         System.out.println(inserted);
-    }
+    }*/
+}
 }

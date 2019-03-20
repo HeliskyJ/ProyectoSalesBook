@@ -7,6 +7,7 @@ package com.servlet;
 
 import com.models.Documents;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -17,6 +18,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -26,8 +28,7 @@ import javax.servlet.http.HttpServletResponse;
 public class InDocuments extends HttpServlet {
           boolean state;
           double iv;
-          NumberFormat formatter = new DecimalFormat("#0.00");   
-       DecimalFormat formato = new DecimalFormat("#.00");
+          BigDecimal impuesto;
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -39,46 +40,22 @@ public class InDocuments extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-          
+        HttpSession session = request.getSession();
+        
                  String date = (request.getParameter("date"));
                  LocalDate localDate = LocalDate.parse(date);
                  String serial = request.getParameter("serial");
-                 String[] a = request.getParameterValues("exem");
-     
-                 
-               try{   
-                    for(String boo : a){ 
-                        
-                       if(boo == null){
-                           state = false;
-                           System.out.println("state "+state);
-                       }else{
-                          state = true;
-                           System.out.println("state "+state);
-                       }
-                    }
-               }catch(NullPointerException e){
-                          state = false;
-                         System.out.println("EXEPCION"+state);
-                    }
-            /*
-               
-                    String a=comboBox.getSelectedItem().toString();
-                    //Integer b=(comboBox_1.getSelectedIndex()+1);
-                    int day=Integer.ParseInt(comboBox_2.getSelectedItem().toString());
-                    double bo;
-                    DecimalFormat df = new DecimalFormat("#.##");      
-                    bo=  Double.parseDouble(df.format(day));
-               */   
-               
-                
+                 int numero = Integer.parseInt(request.getParameter("numero"));
+                 String nit = request.getParameter("nit");
+                 String buyer = request.getParameter("buyer");
+
               try{
                String[] c = request.getParameterValues("iva");
                     //iv = Double.parseDouble(request.getParameter("iv"));
                     for(String iva: c){
 
-                    String i = (formatter.format(iva));
-                 iv = Double.parseDouble(i);
+                 iv = Double.parseDouble(iva);
+                 impuesto = BigDecimal.valueOf(iv);
           
                     }
                     //} 
@@ -87,20 +64,24 @@ public class InDocuments extends HttpServlet {
                     System.out.println("Iva exepcion "+e.getMessage());
                 }
 
-                            
                             System.out.println("BLABLA "+iv);
-                            String cd = request.getParameter("total");
-                            String fo = (formatter.format(cd));
-                            double total = Double.parseDouble(fo);
-                            int buyer = Integer.parseInt(request.getParameter("buyer"));
-                            int docType = Integer.parseInt(request.getParameter("docType"));
-                            int userId = 1;
-                            com.dao.DocumentDao.add(new Documents(
-                            Date.valueOf(localDate), serial,state, total, iv, userId , buyer, docType));
+                            Double da = Double.parseDouble(request.getParameter("total"));
+                            BigDecimal total = BigDecimal.valueOf(da);
+                            Double net = Double.parseDouble(request.getParameter("neto"));
+                            BigDecimal worth  = BigDecimal.valueOf(net);
+                            int docType = Integer.parseInt(request.getParameter("item"));
+                            System.out.println("DOCUMENTO TIP "+ request.getParameter("item"));
+                            String user = (String.valueOf(session.getAttribute("id")));
+                            int pk = Integer.parseInt(user);
+                            
+                           com.dao.DocumentDao.add(new Documents(
+                            Date.valueOf(localDate), serial.toUpperCase(), numero, state,
+                                   total, impuesto, worth, pk , nit, buyer.toUpperCase(), docType));
      
                             request.getRequestDispatcher("records.jsp").forward(request, response);
     }
-    /**
+    /**n
+     * 
      * Returns a short description of the servlet.
      *
      * @return a String containing servlet description

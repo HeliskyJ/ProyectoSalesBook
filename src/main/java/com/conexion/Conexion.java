@@ -23,7 +23,7 @@ public class Conexion {
         
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            stringConexion = "jdbc:mysql://localhost:3306/salesBook?SSL=false";
+            stringConexion = "jdbc:mysql://localhost:3306/liven?SSL=false";
             con = DriverManager.getConnection(stringConexion, "root", "hely12345");
             conected = true;
             return con;       

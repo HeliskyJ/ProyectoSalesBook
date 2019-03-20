@@ -16,11 +16,8 @@
         <div class="container">
         <form autocomplete="off" method="post" action="/salesBook/up">
             <br><br><br><br><br><br>
-            <input name="firstName" type="text" placeholder="Nombres completos" 
+            <input name="fullName" type="text" placeholder="Nombre completo" 
                    autofocus="true" required="true" maxlength="35" minlength="4"/>
-            <br><br>
-            <input name="lastName" type="text" placeholder="Apellidos completos"
-                   required="true" draggable="false" maxlength="35" minlength="3"/>
             <br><br>
             <input name="username" type="text" placeholder="Nombre de usuario" 
                    required="true" draggable="false" maxlength="35" minlength="3" />

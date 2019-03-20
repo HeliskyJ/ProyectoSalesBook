@@ -1,6 +1,7 @@
 
 package com.models;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.time.LocalDate;
 
@@ -13,201 +14,194 @@ import java.time.LocalDate;
 public class Documents {
     private int id;
     private LocalDate documentDate;
-    private String serialNumber;
-    private boolean isExempt;
-    private double total;
-    private double iva;
+    private String serie;
+    private int no_doc;
+    private BigDecimal exempt;
+    private BigDecimal total;
+    private BigDecimal iva;
+    private BigDecimal net;
     private int userId;
-    private int buyerId;
+    private String business;
+    private String userNit;
+    private String buyNit;
+    private String buyer;
     private int docTypeId;
-/**
- * Metodo constructor del Documento.
- * @param id
- * @param documentDate
- * @param serialNumber
- * @param isExempt
- * @param total
- * @param iva
- * @param userId
- * @param buyerId
- * @param docTypeId 
- */
-    public Documents( LocalDate documentDate, String serialNumber, boolean isExempt, double total, double iva, int userId, int buyerId, int docTypeId) {
-       
+    private String docName;
+
+    public Documents(int id, LocalDate documentDate, String serie, int no_doc, BigDecimal exempt, BigDecimal total, BigDecimal iva, BigDecimal net, int userId, String business, String userNit, String buyNit, String buyer, int docTypeId, String docName) {
+        this.id = id;
         this.documentDate = documentDate;
-        this.serialNumber = serialNumber;
-        this.isExempt = isExempt;
+        this.serie = serie;
+        this.no_doc = no_doc;
+        this.exempt = exempt;
         this.total = total;
         this.iva = iva;
+        this.net = net;
         this.userId = userId;
-        this.buyerId = buyerId;
+        this.business = business;
+        this.userNit = userNit;
+        this.buyNit = buyNit;
+        this.buyer = buyer;
         this.docTypeId = docTypeId;
+        this.docName = docName;
     }
-/**
- * Metodo constructor dos del Documento.
- * @param documentDate
- * @param serialNumber
- * @param isExempt
- * @param total
- * @param iva
- * @param userId
- * @param buyerId
- * @param docTypeId 
- */
-    
-    public Documents(Date documentDate, String serialNumber, double total, double iva, int userId, int buyerId, int docTypeId) {
+
+    public Documents(Date documentDate, String serie, int no_doc, BigDecimal exempt, BigDecimal total, BigDecimal iva, BigDecimal net, int userId, String buyNit, String buyer, int docTypeId) {
         this.documentDate = documentDate.toLocalDate();
-        this.serialNumber = serialNumber;
+        this.serie = serie;
+        this.no_doc = no_doc;
+        this.exempt = exempt;
         this.total = total;
         this.iva = iva;
+        this.net = net;
         this.userId = userId;
-        this.buyerId = buyerId;
+        this.buyNit = buyNit;
+        this.buyer = buyer;
         this.docTypeId = docTypeId;
     }
-    /**
- * Metodo constructor dos del Documento.
- * @param documentDate
- * @param serialNumber
- * @param isExempt
- * @param total
- * @param iva
- * @param userId
- * @param buyerId
- * @param docTypeId 
- */
-    public Documents(Date documentDate, String serialNumber, boolean isExempt, double total, double iva, int userId, int buyerId, int docTypeId) {
-        this.documentDate =documentDate.toLocalDate();
-        this.serialNumber = serialNumber;
-        this.isExempt = isExempt;
+
+    public Documents(int id, Date documentDate, String serie, int no_doc, BigDecimal exempt, BigDecimal total, BigDecimal iva, BigDecimal net, String buyNit, String buyer, String docName) {
+        this.id = id;
+        this.documentDate = documentDate.toLocalDate();
+        this.serie = serie;
+        this.no_doc = no_doc;
+        this.exempt = exempt;
         this.total = total;
         this.iva = iva;
-        this.userId = userId;
-        this.buyerId = buyerId;
-        this.docTypeId = docTypeId;
+        this.net = net;
+        this.buyNit = buyNit;
+        this.buyer = buyer;
+        this.docName = docName;
     }
-/**
- * Metodo para obtener el id del documento.
- * @return id del Documento. 
- */
+
+    public Documents(int id, BigDecimal total, BigDecimal iva, BigDecimal net, String buyNit, String buyer) {
+        this.id = id;
+        this.total = total;
+        this.iva = iva;
+        this.net = net;
+        this.buyNit = buyNit;
+        this.buyer = buyer;
+    }
+    
+
     public int getId() {
         return id;
     }
-/**
- * Metodo para obtener la fecha del documento.
- * @return fecha del documento.
- */
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public LocalDate getDocumentDate() {
         return documentDate;
     }
-/**
- * Metodo para asignar una fecha al documento.
- * @param documentDate  LocalDate para fecha del documento.
- */
+
     public void setDocumentDate(LocalDate documentDate) {
         this.documentDate = documentDate;
     }
-/**
- * Metodo para obtener el Numero de serie.
- * @return numero de serie.
- */
-    public String getSerialNumber() {
-        return serialNumber;
+
+    public String getSerie() {
+        return serie;
     }
-/**
- * Metodo para asignar un numero de serie.
- * @param serialNumber string de serie
- */
-    public void setSerialNumber(String serialNumber) {
-        this.serialNumber = serialNumber;
+
+    public void setSerie(String serie) {
+        this.serie = serie;
     }
-/**
- * Metodo para obtener un valor booleano.
- * @return el estado del docuemento.
- */
-    public boolean isIsExempt() {
-        return isExempt;
+
+    public int getNo_doc() {
+        return no_doc;
     }
-/**
- * Metodo para asignar el estado de excenta.
- * @param isExempt saber si el documento es excento o no.
- */
-    public void setIsExempt(boolean isExempt) {
-        this.isExempt = isExempt;
+
+    public void setNo_doc(int no_doc) {
+        this.no_doc = no_doc;
     }
-/**
- * Metodo para obtener el total del documento.
- * @return total del documento.
- */
-    public double getTotal() {
+
+    public BigDecimal getExempt() {
+        return exempt;
+    }
+
+    public void getExempt(BigDecimal exempt) {
+        this.exempt = exempt;
+    }
+
+    public BigDecimal getTotal() {
         return total;
     }
-/**
- * Metodo para asignar el tota del documento.
- * @param total double que contiene la cantidad del documento.
- */
-    public void setTotal(double total) {
+
+    public void setTotal(BigDecimal total) {
         this.total = total;
     }
-/**
- * Metodo para obtener cantidad de iva
- * @return cantidad del IVA.
- */
-    public double getIva() {
+
+    public BigDecimal getIva() {
         return iva;
     }
-/**
- * Metodo para asignar el iva
- * @param iva double que contiene el valor del IVA.
- */
-    public void setIva(double iva) {
+
+    public void setIva(BigDecimal iva) {
         this.iva = iva;
     }
-/**
- * Metodo para obtener el id del usuario.
- * @return id del usuario 
- */
+
+    public BigDecimal getNet() {
+        return net;
+    }
+
+    public void setNet(BigDecimal net) {
+        this.net = net;
+    }
+
     public int getUserId() {
         return userId;
     }
-/**
- * Metodo para asignar el usuario 
- * @param userId int contiene el id
- */
+
     public void setUserId(int userId) {
         this.userId = userId;
     }
-/**
- * Metodo para obtener el tipo de documento
- * @return id del tipo de documento.
- */
+
+    public String getBusiness() {
+        return business;
+    }
+
+    public void setBusiness(String business) {
+        this.business = business;
+    }
+
+    public String getUserNit() {
+        return userNit;
+    }
+
+    public void setUserNit(String userNit) {
+        this.userNit = userNit;
+    }
+
+    public String getBuyNit() {
+        return buyNit;
+    }
+
+    public void setBuyNit(String buyNit) {
+        this.buyNit = buyNit;
+    }
+
+    public String getBuyer() {
+        return buyer;
+    }
+
+    public void setBuyer(String buyer) {
+        this.buyer = buyer;
+    }
+
     public int getDocTypeId() {
         return docTypeId;
     }
-/**
- * Metodo para asignar un id de tipo de documento
- * @param docTypeId contiene el id del tipo de documento.
- */
+
     public void setDocTypeId(int docTypeId) {
         this.docTypeId = docTypeId;
     }
-/**
- * Metodo para obtener el comprador.
- * @return id del comprador
- */
-    public int getBuyerId() {
-        return buyerId;
+
+    public String getDocName() {
+        return docName;
     }
-/**
- * Metodo para asignar el comprador.
- * @param buyerId contiene el id del comprador.
- */
-    public void setBuyerId(int buyerId) {
-        this.buyerId = buyerId;
+
+    public void setDocName(String docName) {
+        this.docName = docName;
     }
-    public void setDocumentsDate(int dia, int mes, int anio) {
-    this.documentDate= LocalDate.of(anio, mes, dia);
-    }
-        public String getDateString(){
-        return documentDate.toString();
-    }
+    
 }
