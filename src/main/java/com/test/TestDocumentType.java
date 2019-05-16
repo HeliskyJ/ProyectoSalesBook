@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pruebas;
+package com.test;
 
 import com.dao.DocumentTypeDao;
 import com.models.DocumentType;
@@ -13,9 +13,10 @@ import com.models.DocumentType;
  * @author hely
  */
 public class TestDocumentType {
-    public static void main(String []args){
+
+    public static void main(String[] args) {
         boolean inserted = DocumentTypeDao.add(new DocumentType(
-        "Factura"));
+                "Factura"));
         System.out.println(inserted);
-    } 
+    }
 }

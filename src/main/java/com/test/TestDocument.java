@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pruebas;
-
-import com.models.Documents;
+package com.test;
 
 /**
  *
  * @author hely
  */
 public class TestDocument {
-   /* public static void main(String []args){
+    /* public static void main(String []args){
         long millis=System.currentTimeMillis();  
         java.sql.Date date=new java.sql.Date(millis);  
         System.out.println(date);

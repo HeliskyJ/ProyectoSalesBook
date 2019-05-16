@@ -15,43 +15,55 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Clase Dao de Tipo de Documento para realizar las operaciones.
  *
- * @author hely
+ * @author Hely Méndez.
  */
 public class DocumentTypeDao {
-    
-    public static boolean add(DocumentType type){
-       Connection con;
-       PreparedStatement ps;
-       String sql = "insert into document_type values(null,?)";
-       try{
-           con = Conexion.getConexion();
-           ps = con.prepareStatement(sql);
-           ps.setString(1, type.getDocumentName());
-           ps.executeUpdate();
-           con.close();
-           ps.close();
-           return true;
-           
-           
-       }catch(SQLException e){
-           System.out.println("Error de insert "+e);
-           return false;
-       }
+
+    /**
+     * Método para crear un Nuevo tipo de documento.
+     *
+     * @param type
+     * @return true si es correcto.
+     */
+    public static boolean add(DocumentType type) {
+        Connection con;
+        PreparedStatement ps;
+        String sql = "insert into document_type values(null,?)";
+        try {
+            con = Conexion.getConexion();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, type.getDocumentName());
+            ps.executeUpdate();
+            con.close();
+            ps.close();
+            return true;
+
+        } catch (SQLException e) {
+            System.out.println("Error de insert " + e);
+            return false;
+        }
     }
-    public static List<DocumentType> getTipoDoc(){
+
+    /**
+     * Método para obtener un listado de los tipos de Documento.
+     *
+     * @return Listado de Tipos de documentos.
+     */
+    public static List<DocumentType> getTipoDoc() {
         List<DocumentType> list = new ArrayList<>();
         Connection con;
         PreparedStatement ps;
         ResultSet rs;
         String sql = "Select *from document_type";
-        
-        try{
-            con=Conexion.getConexion();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
-            
-            while(rs.next()){
+
+        try {
+            con = Conexion.getConexion();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
                 list.add(new DocumentType(
                         rs.getInt("id"),
                         rs.getString("document_name")
@@ -59,8 +71,8 @@ public class DocumentTypeDao {
             }
             ps.close();
             con.close();
-        }catch(SQLException e){
-            System.out.println("Error select DocType "+ e.getMessage());
+        } catch (SQLException e) {
+            System.out.println("Error select DocType " + e.getMessage());
             list.clear();
         }
         return list;

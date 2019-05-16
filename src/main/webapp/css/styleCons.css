@@ -1,0 +1,76 @@
+
+/* 
+    Created on : 22-mar-2019, 15:46:44
+    Author     : hely
+*/
+body {
+    margin: 0;
+    background: linear-gradient(45deg, #83AF9B, #C8C8A9);
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+#cabeza  {
+    position: relative;
+    width: 1500px;
+    height: 68px;
+    left: 210px;
+    top: 20px;
+    background-color:  #e5e5da;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: impact;
+    font-size: 25px;
+
+}
+
+
+.container {
+    position: absolute;
+    top: 25%;
+    left: 11%;
+}
+
+table {
+    width: 1500px;
+    border-collapse: separate;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 15px;
+    background-color: rgba(255,255,255,0.2);
+    color: #000000;
+}
+
+th {
+    text-align: center;
+}
+
+thead, th {
+    background-color:  #e5e5da;
+}
+
+#trr:hover {
+    border-style: solid;
+    background-color: rgba(255,255,255,0.3);
+}
+button{
+    position: absolute;
+    width: 55px;
+    height: 58px;
+    left: 0px;
+    top: 100px;
+    background: #4D8A92;
+    border: 0.5px solid #968888;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 24px;
+
+    color: #F8ECEC;
+
+}     

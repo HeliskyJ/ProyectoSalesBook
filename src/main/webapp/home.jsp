@@ -14,14 +14,13 @@
     </head>
     <body>
         <header id="head"> 
-            <a href="#" id="logout"><img src="images/logOut.png" width="60px"></a></header>
-        <div>
-            <button onClick="location.href='records.jsp'">Ingresar Datos</button><br>
-            <button onclick="location.href='bookList.jsp'"> Libros</button><br>
-            <button onclick="location.href='consDate.jsp'"> Consolidado </button>
-            </div>
-            <img id="logo" src="images/logo.png" alt="logo empresarial">
-        
-        
+            <a href="Out" id="logout"><img src="images/logOut.png" width="60px"></a></header>
+        <div id="cont">
+            <button onClick="location.href = 'records.jsp'">Ingresar Datos</button><br>
+            <button onclick="location.href = 'bookList.jsp'"> Libros</button><br>
+            <button onclick="location.href = 'consDate.jsp'"> Consolidado </button>
+        </div>
+
+
     </body>
 </html>

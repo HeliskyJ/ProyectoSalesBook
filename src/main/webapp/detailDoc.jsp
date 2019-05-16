@@ -28,7 +28,6 @@
             <input name="status" type="checkbox" >
             <button>Actualizar</button>
         </form>
-            <button  onclick="location.href='bookList.jsp'">Regresar</button>
+        <button  onclick="location.href = 'bookList.jsp'">Regresar</button>
     </body>
 </html>
-                                  /salesBook/listado?year=2019&month=1

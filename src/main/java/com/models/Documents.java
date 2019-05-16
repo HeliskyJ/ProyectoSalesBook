@@ -1,4 +1,3 @@
-
 package com.models;
 
 import java.math.BigDecimal;
@@ -6,12 +5,14 @@ import java.sql.Date;
 import java.time.LocalDate;
 
 /**
- *Clase que contiene los contructores y los metodos para el objeto Documento. 
+ * Clase que contiene los contructores y los metodos para el objeto Documento.
+ *
  * @author Hely Mendez
  * @version 1.0
  * @since salesBook 1.0
  */
 public class Documents {
+
     private int id;
     private LocalDate documentDate;
     private String serie;
@@ -27,25 +28,24 @@ public class Documents {
     private String buyer;
     private int docTypeId;
     private String docName;
+    private int del;
+    private int al;
 
-    public Documents(int id, LocalDate documentDate, String serie, int no_doc, BigDecimal exempt, BigDecimal total, BigDecimal iva, BigDecimal net, int userId, String business, String userNit, String buyNit, String buyer, int docTypeId, String docName) {
-        this.id = id;
-        this.documentDate = documentDate;
-        this.serie = serie;
-        this.no_doc = no_doc;
-        this.exempt = exempt;
-        this.total = total;
-        this.iva = iva;
-        this.net = net;
-        this.userId = userId;
-        this.business = business;
-        this.userNit = userNit;
-        this.buyNit = buyNit;
-        this.buyer = buyer;
-        this.docTypeId = docTypeId;
-        this.docName = docName;
-    }
-
+    /**
+     * Médoto constructor para la creación de un documento.
+     *
+     * @param documentDate LocalDate fecha del documento
+     * @param serie String serie del documento
+     * @param no_doc int numero del documento
+     * @param exempt BigDecimal cantidad exenta
+     * @param total BigDecimal cantidad total
+     * @param iva BigDecimal cantidad total IVA
+     * @param net BigDecimal valor neto
+     * @param userId int identificador del usuario
+     * @param buyNit String nit del comprador
+     * @param buyer String nombre del comprador
+     * @param docTypeId int identificador del documento
+     */
     public Documents(Date documentDate, String serie, int no_doc, BigDecimal exempt, BigDecimal total, BigDecimal iva, BigDecimal net, int userId, String buyNit, String buyer, int docTypeId) {
         this.documentDate = documentDate.toLocalDate();
         this.serie = serie;
@@ -60,6 +60,21 @@ public class Documents {
         this.docTypeId = docTypeId;
     }
 
+    /**
+     * Método constructor para Documento completo.
+     *
+     * @param id
+     * @param documentDate
+     * @param serie
+     * @param no_doc
+     * @param exempt
+     * @param total
+     * @param iva
+     * @param net
+     * @param buyNit
+     * @param buyer
+     * @param docName
+     */
     public Documents(int id, Date documentDate, String serie, int no_doc, BigDecimal exempt, BigDecimal total, BigDecimal iva, BigDecimal net, String buyNit, String buyer, String docName) {
         this.id = id;
         this.documentDate = documentDate.toLocalDate();
@@ -74,6 +89,16 @@ public class Documents {
         this.docName = docName;
     }
 
+    /**
+     * Método contructor para actualizaciones.
+     *
+     * @param id int identificador del usuario.
+     * @param total BigDecimal cantidad total
+     * @param iva BigDecimal cantidad total IVA
+     * @param net BigDecimal valor neto
+     * @param buyNit String nit del comprador
+     * @param buyer String nombre del comprador
+     */
     public Documents(int id, BigDecimal total, BigDecimal iva, BigDecimal net, String buyNit, String buyer) {
         this.id = id;
         this.total = total;
@@ -82,7 +107,29 @@ public class Documents {
         this.buyNit = buyNit;
         this.buyer = buyer;
     }
-    
+
+    /**
+     * Método constructor para consultas
+     *
+     * @param documentDate LocalDate fecha del documento
+     * @param exempt BigDecimal cantidad exenta
+     * @param total BigDecimal cantidad total
+     * @param iva BigDecimal cantidad total IVA
+     * @param net BigDecimal valor neto
+     * @param docName String nombre del documento
+     * @param del int número menor de documento
+     * @param al int número mayor de factura.
+     */
+    public Documents(Date documentDate, BigDecimal exempt, BigDecimal total, BigDecimal iva, BigDecimal net, String docName, int del, int al) {
+        this.documentDate = documentDate.toLocalDate();
+        this.exempt = exempt;
+        this.total = total;
+        this.iva = iva;
+        this.net = net;
+        this.docName = docName;
+        this.del = del;
+        this.al = al;
+    }
 
     public int getId() {
         return id;
@@ -203,5 +250,21 @@ public class Documents {
     public void setDocName(String docName) {
         this.docName = docName;
     }
-    
+
+    public int getDel() {
+        return del;
+    }
+
+    public void setDel(int del) {
+        this.del = del;
+    }
+
+    public int getAl() {
+        return al;
+    }
+
+    public void setAl(int al) {
+        this.al = al;
+    }
+
 }

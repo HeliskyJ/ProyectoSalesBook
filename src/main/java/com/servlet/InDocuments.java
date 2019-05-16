@@ -26,7 +26,6 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "Documents", urlPatterns = {"/InDoc"})
 public class InDocuments extends HttpServlet {
-          boolean state;
           double iv;
           BigDecimal impuesto;
     /**
@@ -49,7 +48,7 @@ public class InDocuments extends HttpServlet {
                  String nit = request.getParameter("nit");
                  String buyer = request.getParameter("buyer");
 
-              try{
+             /* try{
                String[] c = request.getParameterValues("iva");
                     //iv = Double.parseDouble(request.getParameter("iv"));
                     for(String iva: c){
@@ -62,9 +61,15 @@ public class InDocuments extends HttpServlet {
                    
               }catch(NullPointerException e){
                     System.out.println("Iva exepcion "+e.getMessage());
-                }
-
+                 
+                            
+                }*/        
+        
+                            iv = Double.parseDouble(request.getParameter("iva"));
+                            BigDecimal va = BigDecimal.valueOf(iv);                               
                             System.out.println("BLABLA "+iv);
+                            Double exempt = Double.parseDouble(request.getParameter("exent"));
+                            BigDecimal exenta = BigDecimal.valueOf(exempt);
                             Double da = Double.parseDouble(request.getParameter("total"));
                             BigDecimal total = BigDecimal.valueOf(da);
                             Double net = Double.parseDouble(request.getParameter("neto"));
@@ -72,11 +77,19 @@ public class InDocuments extends HttpServlet {
                             int docType = Integer.parseInt(request.getParameter("item"));
                             System.out.println("DOCUMENTO TIP "+ request.getParameter("item"));
                             String user = (String.valueOf(session.getAttribute("id")));
-                            int pk = Integer.parseInt(user);
-                            
+                            int pk = Integer.parseInt(user);                          
                            com.dao.DocumentDao.add(new Documents(
-                            Date.valueOf(localDate), serial.toUpperCase(), numero, state,
-                                   total, impuesto, worth, pk , nit, buyer.toUpperCase(), docType));
+                                   Date.valueOf(localDate), 
+                                   serial.toUpperCase(), 
+                                   numero,                                  
+                                   exenta,
+                                   total,
+                                   va,
+                                   worth,
+                                   pk ,
+                                   nit, 
+                                   buyer.toUpperCase(),
+                                   docType));
      
                             request.getRequestDispatcher("records.jsp").forward(request, response);
     }

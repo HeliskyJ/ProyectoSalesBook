@@ -13,24 +13,23 @@
         <title>Login</title>
     </head>
     <body>
-        
+
         <div id="formul">
-                        <a href="/salesBook/register.jsp" id="plus">
-                            <img src="images/plus.png" width="60px">
+            <a href="/salesBook/register.jsp" id="plus">
+                <img src="images/plus.png" width="90px">
             </a>
             <img id="user" src="images/user.png" alt="icono de usuario">
             <br>
             <form autocomplete="off" method="post" action="/salesBook/log" draggable="false" >
-            <input id="inputOne" name="user" type="text" required="true" 
-                   placeholder="Username" maxlength="35" autofocus/>
-            <br>
-            <input id="inputTwo" name="password" type="password" 
-                   required="true" placeholder="Password" maxlength="35"/>
-            <br>
-            <button>Ingresar </button>
-        </form>
-            </div>
-        <img id="logo" src="images/logo.png" alt="logotipo"/> 
+                <input id="inputOne" name="user" type="text" required="true" 
+                       placeholder="Username" maxlength="35" autofocus/>
+                <br>
+                <input id="inputTwo" name="password" type="password" 
+                       required="true" placeholder="Password" maxlength="35"/>
+                <br>
+                <button >Ingresar </button>
+            </form>
+        </div>
         <footer id="foot"></footer>
     </body>
 </html>

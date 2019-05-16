@@ -3,59 +3,87 @@
     Created on : 05-mar-2019, 15:06:04
     Author     : Hely Mendez
 */
-
+body{
+    margin: 1px;
+    background-image: url("../images/invoice.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .container{
     position: absolute;
-width: 415px;
-height: 673px;
-left: 560px;
-top: 135px;
-
-background: #FFFBFB;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 950px;
+    height: 900px;
+    left: 35%;
+    top: 55px;
+    background-color:rgba(0,0,255,0.2);
+    border-bottom: 0px inset #478A8F;
+    border-left: 20px solid #478A8F;
+    border-top: 10px inset #478A8F;
+    border-right: 10px inset #478A8F;
+    box-sizing: border-box;
+    box-shadow: inset 10px 10px 10px  #CECACA;
 }
 input{
+    display: block;
+    margin-top:9px;
+    padding:1rem;
+    color: inherit;
+    width: 60%;
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: inherit;
+    line-height: 2rem;
+    border: none;
+    border-radius: 0.4rem;
+    transition: box-shadow 300ms;
 
-width: 198px;
-height: 32px;
-margin-top: 20px;
-border: 0px;
-
-background: #C4C4C4;
-box-shadow: 1px 8px 8px #3D7C33;;
+}
+input::placeholder{
+    color: #B0BEC5;
+}
+input:focus{
+    outline: none;
+    box-shadow: 0.2rem 0.8rem 1.6rem rgba(0,0,255,0.6);
 }
 #back{
     position: absolute;
-width: 45px;
-left: 0px;
-top: 0px;
+    width: 45px;
+    left: 0px;
+    top: 0px;
+}
+#back:hover{
+    opacity:0.70;
 }
 #user{
     position: absolute;
-width: 120px;
-left: 250px;
-top: 150px;
+    width: 220px;
+    left: 70%;
+    top: 150px;
 }
 button{
     position: absolute;
-width: 99px;
-height: 35px;
-left: 263px;
-top: 280px;
+    width: 250px;
+    height: 60px;
+    left: 70%;
+    top: 420px;
 
-background: #478A8F;
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-line-height: normal;
-font-size: 14px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 24px;
+    color: #FFFFFF;
 
-color: #F8ECEC;
+    background: #478A8F;
+}
+button:hover{
+    background: #78bcc1;
+    font-size: 26px;
 }
 
 #logo{
     position: absolute;
-width: 450px;
-left: 880px;
-top: 510px;
+    width: 450px;
+    left: 880px;
+    top: 510px;
 }

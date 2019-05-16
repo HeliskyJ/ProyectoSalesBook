@@ -8,109 +8,111 @@ and open the template in the editor.
     Author     : Hely Mendez]
 */
 body{
-    
+    margin: 1px;
+    background-image: url("../images/invoice.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
 }
 #formul{
-position: absolute;
-width: 400px;
-height: 640px;
-left: 548px;
-top: 198px;
-
-background: #FBFAFA;
-border-bottom: 3px solid #C2B9B9;
-border-left: 3px solid #C2B9B9;
-border-top: 3px solid #C2B9B9;
-box-sizing: border-box;
+    position: absolute;
+    width: 600px;
+    height: 900px;
+    left: 35%;
+    top: 50px;
+    background-color:rgba(0,0,255,0.2);
+    border-bottom: 0px inset #478A8F;
+    border-left: 20px solid #478A8F;
+    border-top: 10px inset #478A8F;
+    border-right: 10px inset #478A8F;
+    box-sizing: border-box;
+    box-shadow: inset 10px 10px 10px  #CECACA;
 }
 
 #user{
-position: absolute;
-width: 152px;
-left: 120px;
-top: 42px;
+    position: absolute;
+    width: 180px;
+    left: 25%;
+    top: 42px;
 }
-
+input{
+    position: relative;
+}
 #inputOne{
+    display: block;
+    margin-top:260px;
+    padding:1.28rem;
+    color: inherit;
+    width: 90%;
+    font-family: inherit;
+    font-size: 2.1rem;
+    font-weight: inherit;
+    line-height: 1.6rem;
+    border: none;
+    border-radius: 0.4rem;
+    transition: box-shadow 300ms;
 
-background: #C4C4C4;
-position: absolute;
-width: 220px;
-height: 29px;
-left:0px;
-top: 230px;
-border: 0px;
-
-mix-blend-mode:nomal;
-box-shadow: 0px 8px 5px #4A67FF;
+}
+input::placeholder{
+    color: #B0BEC5;
+}
+input:focus{
+    outline: none;
+    box-shadow: 0.2rem 0.8rem 1.6rem rgba(0,0,255,0.6);
 }
 
 #inputTwo{
-
-background: #C4C4C4;
-
-
-position: absolute;
-width: 220px;
-height: 29px;
-left:0px;
-top: 298px;
-border: 0px;
-mix-blend-mode: normal;
-box-shadow: 0px 8px 8px #4A67FF;
-}
-
-#logo{
-position: absolute;
-width: 518px;
-left: 851px;
-top: 500px;
-}
-
-#foot{
-    position: absolute;
-width: 1080.03px;
-height: 0px;
-left: 350px;
-top: 837px;
-
-border: 5px solid #A09898;
-box-sizing: border-box;
-transform: rotate(-179.90deg);
+    display: block;
+    margin-top:120px;
+    padding:1.28rem;
+    color: inherit;
+    width: 90%;
+    font-family: inherit;
+    font-size: 2.1rem;
+    font-weight: inherit;
+    line-height: 1.6rem;
+    border: none;
+    border-radius: 0.4rem;
+    transition: box-shadow 300ms;
 }
 
 button{
     position: absolute;
-width: 91px;
-height: 38px;
-left: 18px;
-top: 415px;
-border: 0px;
-background: #478A8F;
+    width: 250px;
+    height: 60px;
+    left: 150px;
+    top: 645px;
+    border: 0px;
 
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-line-height: normal;
-font-size: 14px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 24px;
+    color: #FFFFFF;
 
-color: #FFFFFF;
+    background: #478A8F;
+}
+button:hover{
+    background: #78bcc1;
+    font-size: 26px;
 }
 
 #plus{
-    
-position: absolute;
-width: 47px;
+    width:90px;
+    position: absolute;
+    left: 500px;
+    top: -15px;
+}
+#plus:hover{
+    opacity: 0.50;
 
-left: 360px;
-top: -15px;
 }
 #p{
     margin-top:180px;
- font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-line-height: normal;
-font-size: 24px; 
-color: #F00;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 24px; 
+    color: #F00;
 }

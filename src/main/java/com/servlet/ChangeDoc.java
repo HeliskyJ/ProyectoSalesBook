@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author hely
+ * @author Hely Mendez
  */
 @WebServlet(name = "Actualizar", urlPatterns = {"/Change"})
 public class ChangeDoc extends HttpServlet {
@@ -36,8 +36,7 @@ public class ChangeDoc extends HttpServlet {
             throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         String[] status = request.getParameterValues("status");
- 
-                      
+            
                try{   
                     for(String boo : status){ 
                         
